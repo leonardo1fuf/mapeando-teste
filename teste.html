@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download do PDF</title>
+<style>
+    /* Estilo para o formulário */
+    #download-form {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ccc;
+        z-index: 9999;
+    }
+</style>
+</head>
+<body>
+
+<aside id="mapas1">
+
+    <div class="pdfs">
+
+        <h1>História dos <span class="txtcor">Povos Indígenas no Maranhão</span></h1>
+
+        <section class="mapas">
+
+            <div class="especialidades">
+
+                <div class="interface">
+
+                    <img src="Captura de tela 2024-02-05 172827.png">
+
+                    <h3>França Equinocial</h3>
+
+                    <a href="França Equinocial.pdf" class="download-link">Baixar Mapa</a>
+
+                </div>
+
+                <!-- Adicione outros links de download conforme necessário -->
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Adicione outras seções conforme necessário -->
+
+</aside>
+
+<!-- Formulário de Preenchimento -->
+<div id="download-form">
+    <h2>Preencha o formulário para continuar o download</h2>
+    <form action="conexao.php" method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Baixar PDF">
+    </form>
+</div>
+
+<script>
+// Adiciona um evento de clique a todos os links de download
+var downloadLinks = document.querySelectorAll('.download-link');
+downloadLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        // Impede o comportamento padrão de clicar no link
+        event.preventDefault();
+        // Exibe o formulário quando o link de download é clicado
+        document.getElementById('download-form').style.display = 'block';
+    });
+});
+</script>
+
+</body>
+</html>
+
